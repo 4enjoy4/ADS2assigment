@@ -11,3 +11,4 @@ public interface MyArrayList<T> {
     int lastIndexOf(Object o);
     void sort();
 }
+
