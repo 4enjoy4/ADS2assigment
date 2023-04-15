@@ -1,4 +1,4 @@
-public abstract class MyArray  <T> implements MyArrayList<T> {
+public abstract class MyArray <T> implements MyArrayList<T> {
     @Override
     public int size() {
         return 0;
