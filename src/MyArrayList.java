@@ -1,4 +1,4 @@
-public interface MyArrayList<T> {
+public interface  MyArrayList<T> {
     int size();
     boolean contains (Object o);
     void add (T item);
