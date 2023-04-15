@@ -1,4 +1,9 @@
 public abstract class MyArray <T> implements MyArrayList<T> {
+    private T[] arr;
+    private int size;
+    MyArray(){
+        this.arr = (T[]) new Object[5];
+    }
     @Override
     public int size() {
         return 0;
