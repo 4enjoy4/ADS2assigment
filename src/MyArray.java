@@ -3,6 +3,14 @@ public abstract class MyArray <T> implements MyArrayList<T> {
     private int size;
     MyArray(){
         this.arr = (T[]) new Object[5];
+        this.size = size();
+    }
+    public void increaseBuffer(){
+        T[] newArr = (T[]) new Object[arr.length*2];
+        for(int i = 0; i < arr.length; i++){
+            newArr[i] = arr[i];
+        }
+        arr = newArr;
     }
     @Override
     public int size() {
