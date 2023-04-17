@@ -6,6 +6,11 @@ public class MyArray<T> implements MyArrayList<T> {
         this.arr = (T[]) new Object[5];
         this.size = size();
     }
+    public void IndexChecker(int index){
+        if(index < 0 || index >= size){
+            throw new IndexOutOfBoundsException();
+        }
+    }
 
     public void increaseBuffer() {
         T[] newArr = (T[]) new Object[arr.length * 2];
@@ -55,7 +60,8 @@ public class MyArray<T> implements MyArrayList<T> {
 
     @Override
     public T get(int index) {
-        return null;
+        IndexChecker(index);
+        return arr[index];
     }
 
     @Override
