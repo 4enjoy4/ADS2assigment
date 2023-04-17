@@ -1,13 +1,15 @@
-public abstract class MyArray <T> implements MyArrayList<T> {
+public class MyArray<T> implements MyArrayList<T> {
     private T[] arr;
     private int size;
-    MyArray(){
+
+    MyArray() {
         this.arr = (T[]) new Object[5];
         this.size = size();
     }
-    public void increaseBuffer(){
-        T[] newArr = (T[]) new Object[arr.length*2];
-        for(int i = 0; i < arr.length; i++){
+
+    public void increaseBuffer() {
+        T[] newArr = (T[]) new Object[arr.length * 2];
+        for (int i = 0; i < arr.length; i++) {
             newArr[i] = arr[i];
         }
         arr = newArr;
@@ -25,7 +27,7 @@ public abstract class MyArray <T> implements MyArrayList<T> {
 
     @Override
     public void add(T item) {
-        if(size == arr.length){
+        if (size == arr.length) {
             increaseBuffer();
         }
         arr[size++] = item;
