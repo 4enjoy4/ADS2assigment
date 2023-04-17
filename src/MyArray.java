@@ -12,9 +12,10 @@ public abstract class MyArray <T> implements MyArrayList<T> {
         }
         arr = newArr;
     }
+
     @Override
     public int size() {
-        return 0;
+        return size;
     }
 
     @Override
@@ -24,7 +25,10 @@ public abstract class MyArray <T> implements MyArrayList<T> {
 
     @Override
     public void add(T item) {
-
+        if(size == arr.length){
+            increaseBuffer();
+        }
+        arr[size++] = item;
     }
 
     @Override
