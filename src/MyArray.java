@@ -46,7 +46,11 @@ public class MyArray<T> implements MyArrayList<T> {
 
     @Override
     public void add(T item, int index) {
-
+        if (size == arr.length) {
+            increaseBuffer();
+        }
+        arr[index] = (T) item;
+        size++;
     }
 
     @Override
