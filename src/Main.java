@@ -11,13 +11,13 @@ public class Main {
             }
 
             @Override
-            public boolean remove(Integer item) {
-                return false;
+            public void remove(Integer item) {
+
             }
 
             @Override
-            public Integer remove(int index) {
-                return null;
+            public void remove(int index) {
+
             }
 
             @Override
@@ -28,7 +28,7 @@ public class Main {
         array.add(30);
         array.add(5);
         array.add(7);
-        int elem = array.get(1);
+        int elem = array.get(0);
         System.out.println(elem);
     }
 }

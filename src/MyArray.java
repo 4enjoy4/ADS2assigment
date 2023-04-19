@@ -20,6 +20,7 @@ public class MyArray<T> implements MyArrayList<T> {
         arr = newArr;
     }
 
+
     @Override
     public int size() {
         return size;
@@ -27,6 +28,11 @@ public class MyArray<T> implements MyArrayList<T> {
 
     @Override
     public boolean contains(Object o) {
+        for(int i =0; i < size; i++){
+            if(arr[i] == o){
+                return true;
+            }
+        }
         return false;
     }
 
@@ -44,17 +50,32 @@ public class MyArray<T> implements MyArrayList<T> {
     }
 
     @Override
-    public boolean remove(T item) {
-        return false;
+    public void remove(T item) {
+        int newIndex = 0;
+        for (int i = 0; i < size; i++) {
+            if (!arr[i].equals(item)) {
+                arr[newIndex++] = arr[i];
+            }
+            size--;
+        }
     }
 
     @Override
-    public T remove(int index) {
-        return null;
+    public void remove(int index) {
+        IndexChecker(index);
+        for(int i = index; i < index; i++){
+            arr[i-1] = arr[i];
+        }
+        size --;
+
     }
 
     @Override
     public void clear() {
+        for(int i = 0; i < size; i++){
+            arr[i] = null;
+        }
+        size = 0;
 
     }
 
@@ -66,12 +87,24 @@ public class MyArray<T> implements MyArrayList<T> {
 
     @Override
     public int indexOf(Object o) {
-        return 0;
+        int index1 = 0;
+        for (int i = 0; i < size; i++) {
+            if (arr[i] == o) {
+                index1 = i;
+            }
+        }
+        return index1;
     }
 
     @Override
     public int lastIndexOf(Object o) {
-        return 0;
+        int lastIndex = -1;
+        for (int i = 0; i < size; i++) {
+            if (arr[i].equals(o)) {
+                lastIndex = i;
+            }
+        }
+        return lastIndex;
     }
 
     @Override
