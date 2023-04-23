@@ -28,7 +28,9 @@ public class Main {
         array.add(30);
         array.add(5);
         array.add(7);
-        int elem = array.get(0);
-        System.out.println(elem);
+
+        array.remove(1);
+       array.add(6);
+        System.out.println(array.size());
     }
 }

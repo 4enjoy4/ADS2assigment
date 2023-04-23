@@ -23,6 +23,7 @@ public class MyArray<T> implements MyArrayList<T> {
 
     @Override
     public int size() {
+
         return size;
     }
 
